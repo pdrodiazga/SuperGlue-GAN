@@ -131,8 +131,13 @@ if __name__ == '__main__':
     matching = Matching(config).eval().to(device)
     keys = ['keypoints', 'scores', 'descriptors']
     ContIteraciones=1
-    for i in range(0,50):
-        opt.input='.\EnchancedOri_'+str(i)+'.mp4'
+    # Este for es por si queremos automatizar un número de videos, por ejemplo,
+    # los 50 video que comentamos de los que se hicieronla prueba para que se ponga
+    # uno tras otro.
+    for i in range(0,1):
+        # Linea donde pondriamos el nombre de opt.input para automatizar el proceso:
+        # Ej: opt.input='.\EnchancedOri_'+str(i)+'.mp4'
+        # Importante el '.\' si no el video da error
         contimg=0
         vs = VideoStreamer(opt.input, opt.resize, opt.skip, opt.img_glob, opt.max_length)
         frame, ret = vs.next_frame()
@@ -171,6 +176,7 @@ if __name__ == '__main__':
         K = np.array(valores).astype(float).reshape((3, 3))
         # Destroy all OpenCV windows
         cv2.destroyAllWindows()
+        # Aplicamos SuperGlue al video que queremos abrir
         while True:
             frame, ret = vs.next_frame()
             if not ret:
@@ -208,6 +214,7 @@ if __name__ == '__main__':
                 last_frame, frame, kpts0, kpts1, mkpts0, mkpts1, color, text,
                 path=None, show_keypoints=opt.show_keypoints, small_text=small_text)
 
+            # Si no queremos mostrarlo en pantalla
             if not opt.no_display:
                 cv2.imshow('SuperGlue matches', out)
                 key = chr(cv2.waitKey(1) & 0xFF)
@@ -238,6 +245,7 @@ if __name__ == '__main__':
             timer.update('viz')
             timer.print()
 
+            # Para guardar el resultado en algun directorio
             if opt.output_dir is not None:
                 #stem = 'matches_{:06}_{:06}'.format(last_image_id, vs.i-1)
                 stem = 'matches_{:06}_{:06}'.format(stem0, stem1)
@@ -245,6 +253,7 @@ if __name__ == '__main__':
                 print('\nWriting image to {}'.format(out_file))
                 cv2.imwrite(out_file, out)
 
+            # Para evaluar las imagenes
             if opt.eval:
                 print(eval_path)
                 try:
@@ -286,6 +295,7 @@ if __name__ == '__main__':
 
         # Close any remaining windows.
         cv2.destroyAllWindows()
+        # Sacamos la media de todas las evaluaciones del video
         if opt.eval:
             print('Proceidendo a evaluar')
             # Collate the results into a final table and print to terminal.
@@ -323,6 +333,8 @@ if __name__ == '__main__':
             print('AUC@3\t AUC@5\t AUC@10\t Prec\t Rep\t MScore\t')
             print('{:.2f}\t {:.2f}\t {:.2f}\t {:.2f}\t {:.2f}\t {:.2f}\t'.format(
                 aucs[0], aucs[1], aucs[2], prec,R, ms))
+            '''
+            # Descomentar si se quiere guardar los datos para guardar datos
             Resultado={'AUC@3': aucs[0], 
                        'AUC@5': aucs[1], 
                        'AUC@10': aucs[2], 
@@ -337,7 +349,7 @@ if __name__ == '__main__':
                         'epipolar_errors': results['epipolar_errors'],
                         'matches_correct':results['matches_correct'],
                         'matches': results['matches']}
-            RutaDeAUC = 'GoPro10_Eval'+"/"+'{}_Iteration.npz'.format(str(ContIteraciones))
-            np.savez(str(RutaDeAUC), **Resultado)
+            RutaDeAUC = opt.input+"/"+'{}_Iteration.npz'.format(str(ContIteraciones))
+            np.savez(str(RutaDeAUC), **Resultado)'''
         ContIteraciones+=1
     print('==> Finshed Demo.')

@@ -720,6 +720,9 @@ if __name__ == '__main__':
   cap = cv2.VideoCapture(opt.input)
   output=cv2.VideoWriter_fourcc(*'mp4v')
   total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+  # Me gusta siempre colocar el output file a mano en el código
+  # Si quieres guardar el resultado de la red Gan con otro nombre,
+  # debes modificarlo aqui
   output_file='EnchancedOri.mp4'
   # Especifica el tamaño del frame (ancho, alto) y la velocidad de fotogramas (FPS)
   frame_width = 640
@@ -743,7 +746,6 @@ if __name__ == '__main__':
         print('stop_dispose')
         break
   cv2.destroyAllWindows()
-  #opt.input=str('.')+str('\\')+output_file
   # This class helps load input images from different sources.
   vs = VideoStreamerSuperPoint(opt.input, opt.camid, opt.H, opt.W, opt.skip, opt.img_glob)
   print('==> Running SuperPoint')
@@ -828,7 +830,8 @@ if __name__ == '__main__':
   |___________|
   
   '''
-
+  # Modificamos la entrada del video para utilizar el creado por FSpiralGan
+  opt.input='.\\'+output_file
   print('==> Running SuperGlue')
   if len(opt.resize) == 2 and opt.resize[1] == -1:
         opt.resize = opt.resize[0:1]
@@ -857,7 +860,6 @@ if __name__ == '__main__':
     }
   matching = Matching(config).eval().to(device)
   keys = ['keypoints', 'scores', 'descriptors']
-
   vs = VideoStreamer(opt.input, opt.resize, opt.skip, opt.img_glob, opt.max_length)
   frame, ret = vs.next_frame()
   assert ret, 'Error when reading the first frame (try different --input?)'
