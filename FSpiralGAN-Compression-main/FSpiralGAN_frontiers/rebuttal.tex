@@ -1,0 +1,232 @@
+\documentclass[a4paper,twoside,10pt]{reviewresponse}
+
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{a4wide}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{epstopdf}
+%\usepackage{stfloats}
+%\usepackage{color}
+\usepackage{colortbl}
+%\usepackage[table]{xcolor}
+\newcommand\figcaption{\def\@captype{figure}\caption}
+\newcommand\tabcaption{\def\@captype{table}\caption}
+\newcommand\etal{\textit{et al.~}}
+\newcommand{\tabelcell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\newcommand\bs[1]{\mathbf{#1}}
+\newcommand\ies{\textit{i.e.}}
+\newcommand\egs{\textit{e.g.}}
+\newcommand\etals{\textit{et al.}}
+\newcommand{\at}{\makeatletter @\makeatother}
+\newcommand\tgray[1]{\textcolor{blue}{#1}}
+%\usepackage{amssymb}
+%\usepackage{multirow}
+\usepackage{soul}
+
+%\newcommand{\chprefix}{5.4}
+\renewcommand\theequation{\arabic{equation}}
+\renewcommand\thefigure{\arabic{figure}}
+\renewcommand\thetable{\arabic{table}}
+\newcommand{\bhline}[1]{\noalign{\hrule height #1}}
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+% 2. Complete the paper data
+\newcommand{\myAuthors}{{John.~Doe$^{\displaystyle 1}$, ~Foo~B.~Bar$^{\displaystyle 2}$, } \\ {~Peter Sanchez$^{\displaystyle 2}$}}
+\newcommand{\myAuthorsShort}{John.~Doe et. al}
+\newcommand{\myEmail}{john@uco.es}
+\newcommand{\myTitle}{Response to Reviewers' Comments}
+\newcommand{\myShortTitle}{}
+\newcommand{\myJournal}{2021JOE003522}
+\newcommand{\myDept}{{$^{\displaystyle 1}$Department of Computer Science and Numerical Analysis, University of C\'{o}rdoba, C\'{o}rdoba 14074, Spain. \\ \url{http://www.uco.es/ayrna/}}\\
+{$^{\displaystyle 2}$School of Computer Science, The University of XXX. }\\}
+
+%\usepackage[linktoc=all]{hyperref}
+\usepackage[linktoc=all,bookmarks,bookmarksopen=true,bookmarksnumbered=true]{hyperref}
+
+\hypersetup{
+pdfauthor = {\myAuthorsShort},
+pdftitle = {\myTitle},
+pdfsubject = {\myJournal\xspace},
+colorlinks = true,
+linkcolor=black!70!green,          % color of internal links
+citecolor=black!70!green,        % color of links to bibliography
+filecolor=magenta,      % color of file links
+urlcolor=black!70!green           % color of external links
+}
+
+\makeatletter
+\def\UrlAlphabet{%
+      \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+      \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+      \do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+      \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+      \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+      \do\Y\do\Z}
+\def\UrlDigits{\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9\do\0}
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\g@addto@macro{\UrlBreaks}{\UrlAlphabet}
+\g@addto@macro{\UrlBreaks}{\UrlDigits}
+
+\begin{document}
+\thispagestyle{plain}
+
+\begin{center}
+ {\LARGE\myTitle} \vspace{0.5cm} \\
+ {\large\myJournal} \vspace{0.5cm} \\
+% \today \vspace{0.5cm} \\
+% \myAuthors \\
+% \url{\myEmail} \vspace{1cm} \\
+% \myDept
+\end{center}
+
+%\tableofcontents
+
+%\begin{abstract}
+Dear Editor and Reviewers:
+\par
+\quad\quad We are pleased to resubmit for publishing the revised version of our manuscript $\#$964600, entitled ``Fast Underwater Image Enhancement Based on a Generative Adversarial Framework''. We sincerely appreciate the efforts made by the reviewers and the editor. Your comments are all valuable and very helpful for further revising and improving our paper, as well as the important guiding significance to our research in the future. We have studied the comments carefully and have made corrections that we hope meet with approval. The main corrections in the revised manuscript are highlighted in yellow and along strikeout lines. Thank you very much again for your efforts in reviewing our manuscript.
+\par
+\quad\quad We have carefully addressed all the concerns and have conducted a thorough proofreading. The detailed replies to reviewers are presented on the following pages.
+
+Yours sincerely,\\
+Yang Guan, Xiaoyan Liu, Zhibin Yu, Yubo Wang, Xingyu Zheng, Shaoda Zhang, and Bing Zheng 
+\newpage
+
+\section{Reviewer 1}
+\rcomment{
+1. More blind metrics (such as UCIQE, CCF and PCQI) should be reported comprehensively to demonstrate the superiority of the proposed method over other competitors.
+UCIQE: Yang, M., Sowmya, A., 2015. An underwater color image quality evaluation metric. IEEE Trans. Image Process. 24 (12), 6062-6071.
+CCF: Wang, Y., Li, N., Li, Z., Gu, Z., Zheng, H., Zheng, B., Sun, M., 2018. An imaging inspired no-reference underwater color image quality assessment metric. Comput. Electr. Eng. 70, 904-913.
+PCQI: Ancuti, C.O., Ancuti, C., Vleeschouwer, C.D., Bekaert, P., 2018. Color balance and fusion for underwater image enhancement. IEEE Trans. Image Process. 27 (1), 379-393.
+}
+\textbf{Response:} 
+Thanks for your professional questions. We add PCQI, UCIQE, and CCF metrics in comparative experiments to demonstrate the superiority of our model. In our revised manuscript, we introduce these three metrics and add the PCQI metric in Table 1, Tables 8, Table 9, and Table 10 with UCIQE and CCF metrics in Tables 2 and Table 3. We have made the following revision on Page 8, Page 9, Page 10, and Page 12 (highlighted in yellow):
+\begin{quotation}
+	\tgray{
+		``... We also use the full reference metric patch-based contrast quality index (PCQI) to assess the quality of images with contrast changes. The closer the contrast of the generated image is to that of the reference image, the higher the PCQI score. ...
+}
+\end{quotation}
+
+\begin{quotation}
+	\tgray{
+	``... We use underwater color image quality evaluation (UCIQE), which consists of a linear combination of color intensity, saturation, and contrast, to evaluate the degree of low contrast, blur, and color casts in underwater images. We also use a metric based on imaging analysis of underwater absorption and scattering properties, called CCF, which effectively quantifies absorption and scattering-induced color shifts and blurring. ...''
+}
+\end{quotation}
+
+\begin{quotation}
+	\tgray{
+		``...We achieved the highest PSNR and PCQI value using our model. This result verifies that the enhanced image from our model is closer to the reference image in color and contrast. ...''
+}
+\end{quotation}
+
+\begin{quotation}
+	\tgray{
+		``... we have to use the UIQM, UCIQE, and CCF, which have no reference matrix, to measure the quality of the generated images. In Table 2, we can see that our model outperforms other methods on most quality metrics. We achieve the best UIQM results on the UCCS subset using our model. A high UIQM value means that the underwater images have high color saturation and contrast ...''
+}
+\end{quotation}
+
+\begin{quotation}
+	\tgray{
+		``...we can see that the images generated by the proposed model have the highest UIQM and UCIQE, indicating that our method is most consistent with human visual perception  ...''
+}
+\end{quotation}
+
+\begin{quotation}
+	\tgray{
+		``... When the channel number changes from 16 to 32, we observe a slight gain in the PCQI, PSNR, and SSIM indices with dramatic decreases in running speed ...''
+}
+\end{quotation}
+
+\begin{quotation}
+	\tgray{
+		``...The enhancement results of the model introducing BN and CA comprehensively improved PCQI, SSIM, and PSNR scores. As shown in Table 10, an RCAB with a BN or CA only slightly decreases the FPS  ...''
+}
+\end{quotation}
+
+\rcomment{
+2. The proposed method should be compared two representative methods, the Sea-Thru method and the Fusion method, on the related benchmarks.
+Sea-Thru: D. Akkaynak, T. Treibitz, “Sea-thru: A method for removing water from underwater images,” IEEE Conf. Comput. Vision Pattern Recognit., 2019, pp. 1682-1691.
+Fusion: C. Ancuti, C. O. Ancuti, T. Haber, and P. Bekaert, “Enhancing underwater images and videos by fusion,” IEEE Conf. Comput. Vision Pattern Recognit., 2012, pp. 81-88.}
+
+\textbf{Response:} 
+Thanks for your professional questions. We have added a comparative experiment on the D3 dataset. The models involved in the comparison are Fusion, Sea-thru, and the proposed model. The experimental results are shown in Figure 10 and Table 6. In our revised manuscript, we have made the following revision on Page 8, Page 11 (highlighted in yellow):
+\begin{quotation}
+	\tgray{
+		``... The D3 dataset contains 68 images taken from various angles of a single reef scene along with corresponding depth maps. We select all images for our model testing, and all images are resized to 7968$\times$5312. ...''
+}
+\end{quotation}
+
+\begin{quotation}
+	\tgray{
+		``... The Figure 10 shows the results of the comparison experiment on the D3 dataset, the size of each image in the dataset is 7968$\times$5312. It can be seen from Figure 10\textbf{B-D} that all three methods can effectively remove the color cast and improve the contrast and color saturation of the images. As can be seen from Table 6, The proposed model approximates the sea-thru method on most of the evaluation metrics and has obvious speed advantages in processing high-resolution images ...''
+}
+\end{quotation}
+
+
+
+\section{Reviewer 2}
+
+\rcomment{
+1. Underwater image enhancement is a fundamental requirement in the field of underwater vision. Benefiting from the success of deep learning, underwater image enhancement has made remarkable progress.
+This article aims at large size images for real-time enhancement, a FSpiral-GAN is designed with equal upsampling blocks (EUBs), equal downsampling blocks (EDBs).
+The novelty is limited compared with their previous Spiral-GAN besides unchanged channel number. The size of input in FSpiral-GAN is still 256*256fhow does this support the idea designed for large-size image.
+More GAN-based models should be compared.
+Ablation experiment with not exactly the same number of channels should be conducted to validate the EUBs and EDBs.
+}
+\textbf{Response:} 
+Thank you for your critical comments and helpful suggestions.
+
+First, reviewer 2 argued that the size of the input in FSpiral-GAN is still 256*256 which can not support large-size image enhancement. We are bound to say we disagree with reviewer 2 on this point. Training a network with small pictures and using the network for large-size image inference is a common technique in the field of underwater image enhancement (e.g. SprialGAN [A] and UGAN [B]). The key to inference time is decided by model parameters and architectures, not the training image size.
+
+We have tried our best to improve the manuscript and made changes according to the reviewers' comments. In our revised manuscript, we have made the following revision on Page 5 (highlighted in yellow):
+
+\begin{quotation}
+	\tgray{
+		``... We follow the training setup of UGAN and Sprial-GAN to enhance \textit{large-size} images. ...''
+}
+\end{quotation}
+
+Second, since we already compared typical GAN-based methods for underwater image enhancement (FUnIE-GAN and Spiral-GAN), We add a GAN-based model UGAN [B] to the comparative experiments on the UCCS subset and EUVP dataset. In our revised manuscript, the experimental results can be found in Figure 7, Figure 8, Table 2, and Table 3.
+
+[A] Han, R., Guan, Y., Yu, Z., Liu, P.,  Zheng, H. (2020). Underwater Image Enhancement Based on a Spiral Generative Adversarial Framework. IEEE Access, 8, 218838-218852.
+
+[B] Fabbri, C., Islam, M. J., Sattar, J. (2018, May). Enhancing underwater imagery using generative adversarifal networks. In 2018 IEEE International Conference on Robotics and Automation (ICRA) (pp. 7159-7165). IEEE.
+
+Furthermore, we consider two approaches (Fusion and sea-thru) for comparison on a new dataset. In our revised manuscript, the experimental results can be found in Figure 10 and Table 6. We have made the following revision on Page 8, Page 11 (highlighted in yellow):
+\begin{quotation}
+	\tgray{
+		``... The D3 dataset contains 68 images taken from various angles of a single reef scene along with corresponding depth maps. We selected all images for our model testing, and all images were resized to 7968$\times$5312. ...''
+}
+\end{quotation}
+
+\begin{quotation}
+	\tgray{
+		``... The Figure 10 shows the results of the comparison experiment on the D3 dataset, the size of each image in the dataset is 7968$\times$5312. It can be seen from Figure 10~\textbf{B-D} that all three methods can effectively remove the color cast and improve the contrast and color saturation of the images. As can be seen from Table 6, the proposed model approximates the sea-thru method on most of the evaluation metrics and has obvious speed advantages in processing high-resolution images ...''
+}
+\end{quotation}
+
+
+Third, please note we already finished the ablation experiments and evaluate the case of "not exactly the same number of channels" in EDBs and EUBs in Table 11 of our first draft. We carefully calculated the parameters, FLOPs, and FPS when the model introduced the operations of the equal channel, and explained these metrics in detail. In our revised manuscript, we have made the following revision on Page 13 to emphasize this point (highlighted in yellow):
+
+\begin{quotation}
+	\tgray{
+		``... when the equal channel operation is used in EUB and EDB, the model has $0.134M$ parameters. The equal channel operations reduce approximately $3M$ parameters compared to the model that does not introduce equal channel operation, and it also significantly reduces FLOPs, and increases FPS from 32 to 40 for \textit{large-size} images. Meanwhile, we find that the network with upsampling and downsampling operations can also speedup the network inference. Although upsampling and downsampling operations increase approximately $0.24M$ parameters, they can significantly decrease FLOPs and increase the processing speed for both \textit{small-size} and \textit{large-size} images ...''
+}
+\end{quotation}
+
+
+
+\newpage
+We appreciate for Editors/Reviewers' warm work earnestly and hope that the correction will meet with approval. Once again, thank you very much for your comments and suggestions.
+\end{document}

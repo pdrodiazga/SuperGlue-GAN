@@ -1,0 +1,40 @@
+Video 1(Tuberia/Vid):
+			AUC@3    AUC@5   AUC@10  Prec    Rep     MScore     n
+Sin Preprocesar:	39.39    39.90   41.63   99.58   53.61   53.58	    800.481
+FunieGan:		43.57    44.24   46.07   99.76   46.63   46.64	    877.142
+FSpiralGan:             44.60    44.97   46.78   99.94   48.81   48.74      1033.894
+SIFT:            	62.58    63.44   65.48   -----	 23.44	 -----	    907.610
+ORB:			77.39    78.46   80.88   -----	 7.43	 -----	    499.586
+
+
+Video 2(GOPRO10):
+			AUC@3    AUC@5   AUC@10  Prec    Rep     MScore     n
+Sin Preprocesar:	49.59    51.25   54.48   99.50   49.87   50.77	    655.305
+FunieGan:		43.57    44.24   46.07   99.76   46.63   46.64	    877.142
+FSpiralGan:             46.72    48.28   51.55   99.75   47.17   48.18	    796.129
+SIFT:            	58.97    59.85   62.43   -----	 29.96	 -----	    1604.75
+ORB:			70.53    71.62   73.96   -----	 9.73	 -----	    499.854
+
+Video 3(Orca/CorteVid):
+			AUC@3    AUC@5   AUC@10  Prec    Rep     MScore     n
+Sin Preprocesar:	44.38    45.34   47.19   98.03   42.90   42.98	    708.933	
+FunieGan:		35.95    36.34   37.18   98.97   44.61   45.19	    1013.283
+FSpiralGan:             37.97    38.55   39.98   99.07   45.14   45.49	    1362.355
+
+Video 4(Raya 1/GOPR1611):
+			AUC@3    AUC@5   AUC@10  Prec    Rep     MScore     n
+Sin Preprocesar:	49.05    50.19   52.93   99.80   78.70   78.70	    308.699
+FunieGan:		37.91    39.09   41.35   99.88   51.93   51.66	    470.721
+FSpiralGan:             35.03    35.82   37.39   99.84   56.79   57.04	    534.921
+
+Video 4(Raya 2/GOPR3749):
+			AUC@3    AUC@5   AUC@10  Prec    Rep     MScore     n
+Sin Preprocesar:	51.56    52.29   54.39   99.62   71.07   71.11	    308.699
+FunieGan:		13.97    14.47   15.83   99.81   79.30   80.07	    1008.371
+FSpiralGan:             38.41    38.93   40.78   99.75   60.02   60.69	    190.727
+
+Prueba  especial Incertidumbre:
+Parametro de entrada generado por la redGan:
+Video 1(Tuberia/Vid):
+			AUC@3    AUC@5   AUC@10  Prec    Rep     MScore     n
+FSpiralGan:		45.29    45.88   47.52   99.94   48.86   48.80	    1034.002
