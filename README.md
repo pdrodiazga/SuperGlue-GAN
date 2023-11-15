@@ -14,6 +14,13 @@ python .\SuperGlue_test.py ruta/al/video/a/examinar  --eval
 ```
 El video tiene que ser, si o si, .\+(nombre del video con su extension) si no al cargarlo a SuperGlue falla.
 
+# Comprobar Tests con graficas
+Una vez que se ha hecho el test, se debe de usar el siguiente script en SuperGluePetrainedNetwork-master:
+```
+python .\analisisincetidumbre.py
+```
+Tal cual como esta el código hace el analisis de los 50 test sobre el video 1, para ello debes de colocar las 50 carpetas de los test en el directorio donde se encuentra el script.
+
 # FSpiralGan+SuperGlue
 Para utilizar SFpiralGan con Superglue se debe de usar el siguiente script en SuperGluePetrainedNetwork-master:
 ```
