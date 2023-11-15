@@ -2,7 +2,7 @@
 
 Este directorio esta divido en 5 partes:
 
-* El código del proyecto se encuentra en la carpeta SuperGluePretrainedNetwork-master y los datos que se usaron en el trabajo se encuentran para descargar en: (Enlace de Terabox)
+* El código del proyecto se encuentra en la carpeta SuperGluePretrainedNetwork-master y los datos que se usaron en el trabajo se encuentran para descargar en: (Enlace de Terabox, si esto sigue aqui es porque se sigue subiendo)
 * En cuanto a las tablas e imagenes usadas en el overleaf, se encuentran en la carpeta de Fotos y tablas.
 * En la carpeta de SuperPoint esta el códgio base de SuperPoint.
 * FUnieGan-main es la carpeta donde creamos los videos preprocesados con FunieGan para luego usarlos con SuperGlue.
